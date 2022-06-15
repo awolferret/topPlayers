@@ -50,23 +50,23 @@ namespace ConsoleApp1
 
         private void ShowTopByLevel()
         {
-            var topLevel = _players.OrderByDescending(player => player.Level);
-            ShowTop(topLevel.ToList());
+            var sortTopLevel = _players.OrderByDescending(player => player.Level);
+            var result = sortTopLevel.Take(3);
+            ShowTop(result.ToList());
         }
 
         private void ShowTopByPower()
         {
-            var topPower = _players.OrderByDescending(player => player.Power);
-            ShowTop(topPower.ToList());
+            var sortTopPower = _players.OrderByDescending(player => player.Power);
+            var result = sortTopPower.Take(3);
+            ShowTop(result.ToList());
         }
 
         private void ShowTop(List<Player> list)
         {
-            int topNumber = 3;
-
-            for (int i = 0; i < topNumber; i++)
+            foreach (var player in list)
             {
-                Console.WriteLine(list[i].Name + " Уровень: " + list[i].Level + " Сила: " + list[i].Power);
+                Console.WriteLine(player.Name + " Уровень: " + player.Level + " Сила: " + player.Power);
             }
         }
     }
