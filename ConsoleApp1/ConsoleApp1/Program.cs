@@ -44,8 +44,6 @@ namespace ConsoleApp1
                     case "3":
                         isWorking = false;
                         break;
-                    default:
-                        break;
                 }
             }
         }
